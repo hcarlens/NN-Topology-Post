@@ -122,7 +122,7 @@ Transformations like this, which don't affect topology, are called homeomorphism
 
 (1) Let's assume $W$ has a non-zero determinant. Then it is a bijective linear function with a linear inverse. Linear functions are continuous. So, multiplying by $W$ is a homeomorphism.
 (2) Translations are homeomorphisms
-(3) tanh (and sigmoid and softplus but not ReLU) are continuous functions with continuous inverses. They are bijections if we are careful about the domain and range we consider. Applying them pointwise is a homemorphism
+(3) tanh (and sigmoid and softplus but not ReLU) are continuous functions with continuous inverses. They are bijections if we are careful about the domain and range we consider. Applying them pointwise is a homeomorphism
 
 Thus, if $W$ has a non-zero determinant, our layer is a homeomorphism. ∎
 
@@ -147,7 +147,7 @@ $$B = \{x | 2/3 < d(x,0) < 1\}$$
 
 **Claim**: It is impossible for a neural network to classify this dataset without having a layer that has 3 or more hidden units, regardless of depth.
 
-As mentioned previously, classification with a sigmoid unit or a softmax layer is equivalent to trying to find a hyperplane (or in this case a line) that separates $A$ and $B$ in the final represenation. With only two hidden units, a network is topologically incapable of separating the data in this way, and doomed to failure on this dataset.
+As mentioned previously, classification with a sigmoid unit or a softmax layer is equivalent to trying to find a hyperplane (or in this case a line) that separates $A$ and $B$ in the final representation. With only two hidden units, a network is topologically incapable of separating the data in this way, and doomed to failure on this dataset.
 
 In the following visualization, we observe a hidden representation while a network trains, along with the classification line. As we watch, it struggles and flounders trying to learn a way to do this.
 
@@ -161,7 +161,7 @@ In the end it gets pulled into a rather unproductive local minimum. Although, it
 
 This example only had one hidden layer, but it would fail regardless.
 
-**Proof**: Either each layer is a homeomorphism, or the layer's weight matrix has determinant 0. If it is a homemorphism, $A$ is still surrounded by $B$, and a line can't separate them. But suppose it has a determinant of 0: then the dataset gets collapsed on some axis. Since we're dealing with something homeomorphic to the original dataset, $A$ is surrounded by $B$, and collapsing on any axis means we will have some points of $A$ and $B$ mix and become impossible to distinguish between. ∎
+**Proof**: Either each layer is a homeomorphism, or the layer's weight matrix has determinant 0. If it is a homeomorphism, $A$ is still surrounded by $B$, and a line can't separate them. But suppose it has a determinant of 0: then the dataset gets collapsed on some axis. Since we're dealing with something homeomorphic to the original dataset, $A$ is surrounded by $B$, and collapsing on any axis means we will have some points of $A$ and $B$ mix and become impossible to distinguish between. ∎
 
 If we add a third hidden unit, the problem becomes trivial. The neural network learns the following representation:
 
